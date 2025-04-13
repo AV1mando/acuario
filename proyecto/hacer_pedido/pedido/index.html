@@ -1,0 +1,16 @@
+ <?php
+session_start();
+
+//si el usuario no ha iniciado sesion, lo dirige a login.php
+if (!isset($_SECCION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+//Si se presiona el boton de cerrar seccion, se destruye la seccion 
+if(isset($_GET['logout'])){
+    session_destroy();
+    header("Location: login.php");
+}
+
+?>

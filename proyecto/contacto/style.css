@@ -1,0 +1,159 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(fonfo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+.title {
+    font-size: 20px;
+    background: linear-gradient(90deg, #ff0000, #ff00ff, #8d00f1);
+    background-size: 200%;
+    background-clip: text;
+    color: transparent;
+    animation: titulo 2s infinite linear;
+}
+
+@keyframes titulo {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+.cuerpo {
+    border: 1px solid #000;
+    border-radius: 30px;
+    background: linear-gradient(to right, #4a4a4a, #1f1f1f);
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.redes {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.redes i {
+    font-size: 80px;
+    display: block;
+}
+
+.redes a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container1 {
+    margin: 0 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container1 .info {
+    font-size: 15px;
+    display: block;
+}
+
+.container1 img {
+    width: 200px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn a::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn a::before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s infinite linear;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+.btn a:hover::before {
+    opacity: 1;
+}
+
+.btn a:active:after {
+    background: transparent;
+}
+
+.btn a:active {
+    color: #000;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cuerpo {
+        width: 90%;
+        margin-left: 5%; 
+    }
+    .title {
+        font-size: 18px; 
+    }
+    .redes i {
+        font-size: 60px; 
+    }
+    .container1 {
+        flex-direction: column; 
+    }
+    .container1 .info {
+        margin-bottom: 20px; 
+    }
+}

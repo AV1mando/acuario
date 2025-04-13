@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.video {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    top: 30%;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.cuerpo {
+    font-family: fantasy;
+    font-size: 5vw; 
+}
+
+.cuerpo img {
+    width: 30%;
+    max-width: 300px; 
+    padding: 30px;
+}
+
+.a .b {
+    background: linear-gradient(90deg, #000000, #0f9b0f, #e52e71, #000000);
+    background-size: 200%;
+    background-clip: text;
+    color: transparent;
+    animation: text 2s infinite linear;
+}
+
+@keyframes text {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+.btn {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn a::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn a::before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s infinite linear;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.btn a:hover::before {
+    opacity: 1;
+}
+
+.btn a:active:after {
+    background: transparent;
+}
+
+.btn a:active {
+    color: #000;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cuerpo {
+        font-size: 6vw; 
+    }
+
+    .cuerpo img {
+        width: 50%; 
+    }
+
+    .btn {
+        padding: 10px 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .cuerpo {
+        font-size: 8vw; 
+    }
+
+    .cuerpo img {
+        width: 70%;
+    }
+
+    .btn {
+        padding: 8px 15px; 
+    }
+}

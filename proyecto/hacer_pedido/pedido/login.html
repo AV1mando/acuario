@@ -1,0 +1,89 @@
+<?php
+
+$servidor ='localhost';
+$usuario ='root';
+$pass ='';
+$db ='proyecto';
+
+$enlace = new mysqli($servidor, $usuario, $pass, $db);
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de Pedido</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Pedido</h1>
+        <form action="" name ="proyecto" method="post">
+            <fieldset>
+                <legend>Peces Betta</legend>
+                <label for="betta">¿Qué deseas comprar?</label>
+                <input type="text" name="betta" placeholder="Ej. Betta azul">
+                <label for="cantidad-betta">Cantidad:</label>
+                <input type="number" name="cantidad_betta" min="1" value="1">
+            </fieldset>
+
+            <fieldset>
+                <legend>Peceras</legend>
+                <label for="pecera">¿Qué deseas comprar?</label>
+                <input type="text" name="pecera" placeholder="Ej. Pecera de 20 litros">
+                <label for="cantidad_pecera">Cantidad:</label>
+                <input type="number" name="cantidad_pecera" min="1" value="1">
+            </fieldset>
+
+            <fieldset>
+                <legend>Accesorios</legend>
+                <label for="accesorio">¿Qué deseas comprar?</label>
+                <input type="text" name="accesorio" placeholder="Ej. Filtro de agua">
+                <label for="cantidad-accesorio">Cantidad:</label>
+                <input type="number" name="cantidad_accesorio" min="1" value="1">
+            </fieldset>
+
+            <fieldset>
+                <legend>Alimentos</legend>
+                <label for="alimento">¿Qué deseas comprar?</label>
+                <input type="text" name="alimento" placeholder="Ej. Alimento en escamas">
+                <label for="cantidad-alimento">Cantidad:</label>
+                <input type="number" name="cantidad_alimento" min="1" value="1">
+            </fieldset>
+
+            <fieldset>
+                <legend>Medicamentos</legend>
+                <label for="medicamento">¿Qué deseas comprar?</label>
+                <input type="text" name="medicamento" placeholder="Ej. Tratamiento para hongos">
+                <label for="cantidad-medicamento">Cantidad:</label>
+                <input type="number" name="cantidad_medicamento" min="1" value="1">
+            </fieldset>
+        </form>
+        <button class="btn" type="submit" name="registro"><a href="http://localhost/proyecto">ENVIAR</a></button>
+
+        <button class="btn" type="reset" name="registro"><a href="http://localhost/proyecto">BORRAR</a></button>
+        
+        <button class="btn"><a href="http://localhost/proyecto">REGRESAR</a></button>
+    </div>
+    <?php
+    if(isset($_POST['registro'])){
+        $betta = $_POST['betta'];
+        $cantidad_betta = $_POST['cantidad_betta'];
+        $pecera = $_POST['pecera'];
+        $cantidad_pecera = $_POST['cantidad_pecera'];
+        $accesorio = $_POST['accesorio'];
+        $cantidad_accesorio = $_POST['cantidad_accesorio'];
+        $alimento = $_POST['alimento'];
+        $cantidad_alimento = $_POST['cantidad_alimento'];
+        $medicamento = $_POST['medicamento'];
+        $cantidad_medicamento = $_POST['cantidad_medicamento'];
+
+        $insertarDatos = "INSERT INTO pedido VALUE ('' , '$betta','$cantidad_betta','$pecera','$cantidad_pecera', '$accesorio', '$cantidad_accesorio','$alimento', '$cantidad_alimento', '$medicamento', '$cantidad_medicamento' )";
+
+        $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+    }
+    ?>
+</body>
+</html>

@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: bisque;
+}
+
+.video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    top: 30%;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+nav {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+nav button {
+    font-size: 20px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #2da0c3;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+#carouselExampleControls {
+    display: flex;
+    flex-direction: column; 
+    width: 90%; 
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 40px;
+    background-color: #000000c4;
+}
+
+#carouselExampleControls img {
+    border-radius: 50px;
+}
+
+#carouselExampleControls h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.a {
+    background-color: #fff;
+}
+
+.carousel-table-container {
+    position: relative;
+}
+
+.carousel-table-container section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 30px;
+    width: 90%; 
+    margin: 20px auto; 
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    nav button {
+        font-size: 16px; 
+        padding: 8px;
+    }
+
+    #carouselExampleControls {
+        padding: 20px;
+    }
+
+    table {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 100%; 
+        margin: 5px 0;
+    }
+}

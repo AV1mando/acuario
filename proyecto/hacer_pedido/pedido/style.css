@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #000000, #230b10, #331016, #230b10, #000000);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #D6C1A6;
+}
+
+form {
+    margin: 30px 0;
+}
+
+form fieldset {
+    margin: 20px 0;
+    border: none;
+}
+
+form legend {
+    color: #b5efb4;
+    font-size: 1.5em;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+}
+
+.btn a::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn a::before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s infinite linear;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+.btn a:hover::before {
+    opacity: 1;
+}
+
+.btn a:active:after {
+    background: transparent;
+}
+
+.btn a:active {
+    color: #000;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container h1 {
+        font-size: 2em;
+    }
+
+    form label {
+        font-size: 1em;
+    }
+
+    form input {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px;
+    }
+}
